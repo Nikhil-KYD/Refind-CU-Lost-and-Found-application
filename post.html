@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Post Item - ReFind</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>ReFind</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Lost Items</a>
+            <a href="#">Found Items</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="post-section">
+
+            <h2 id="postTitle">Post an Item</h2>
+
+            <p>
+                Tell us about the item so its owner can find it.
+            </p>
+
+
+            <form id="postForm">
+
+                <label for="itemName">Item Name</label>
+
+                <input
+                    type="text"
+                    id="itemName"
+                    placeholder="Example: Black Wallet"
+                    required
+                >
+
+
+                <label for="category">Category</label>
+
+                <select id="category" required>
+
+                    <option value="">Select a category</option>
+
+                    <option value="id-card">ID Card</option>
+                    <option value="wallet">Wallet</option>
+                    <option value="phone">Phone</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="earphones">Earphones</option>
+                    <option value="keys">Keys</option>
+                    <option value="books">Books</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="other">Other</option>
+
+                </select>
+
+
+                <label for="location">Where?</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Example: University Library"
+                    required
+                >
+
+
+                <label for="description">Description</label>
+
+                <textarea
+                    id="description"
+                    placeholder="Describe the item..."
+                    rows="5"
+                    required
+                ></textarea>
+
+
+                <button type="submit">
+                    Post Item
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+        <script src="js/post.js"></script>
+</body>
+
+</html>
