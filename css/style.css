@@ -1,6 +1,13 @@
-/* =========================================
-   ReFind - Global Styles
-========================================= */
+/* =========================================================
+   ReFind
+   Premium Dark Startup UI
+   Mobile First
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -8,443 +15,664 @@
     box-sizing: border-box;
 }
 
+html {
+    background: #090a0d;
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    color: #222;
     min-height: 100vh;
+
+    background: #090a0d;
+    color: #f5f5f7;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.5;
+
+    padding-bottom: 92px;
+
+    -webkit-font-smoothing: antialiased;
 }
 
 button,
 input,
 select,
 textarea {
-    font-family: inherit;
+    font: inherit;
 }
 
 button {
     cursor: pointer;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-/* =========================================
-   Header
-========================================= */
+
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+
+:root {
+
+    --background: #090a0d;
+
+    --surface: #111318;
+    --surface-2: #16181e;
+    --surface-3: #1b1e25;
+
+    --border: #262a32;
+    --border-light: #30343d;
+
+    --text: #f5f5f7;
+    --text-secondary: #a1a6b0;
+    --text-muted: #707680;
+
+    --primary: #8b7cff;
+    --primary-hover: #9b8eff;
+    --primary-soft: #211d36;
+
+    --lost: #ff7777;
+    --lost-bg: #211518;
+    --lost-border: #392327;
+
+    --found: #62d49a;
+    --found-bg: #14221b;
+    --found-border: #263a30;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header {
+    width: 100%;
     height: 64px;
-    padding: 0 18px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: white;
-    border-bottom: 1px solid #e5e5e5;
+    padding: 0 18px;
+
+    background: rgba(9, 10, 13, 0.96);
+
+    border-bottom: 1px solid var(--border);
 
     position: sticky;
     top: 0;
+
     z-index: 100;
+
+    backdrop-filter: blur(12px);
 }
 
-header h1 {
-    font-size: 24px;
-    font-weight: 700;
+.logo {
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+    color: #ffffff;
 }
 
-nav {
+header nav {
     display: none;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
+header nav a {
+    color: var(--text-secondary);
+
     font-size: 14px;
+
+    font-weight: 500;
+
+    transition: color 0.15s ease;
+}
+
+header nav a:hover {
+    color: #ffffff;
 }
 
 
-/* =========================================
-   Home Page - Hero
-========================================= */
+/* =========================================================
+   HOME HERO
+========================================================= */
 
 .hero {
-    text-align: center;
-    padding: 65px 20px 55px;
+    width: 100%;
+
+    padding: 38px 18px 24px;
+
+    background: var(--background);
 }
 
-.hero h2 {
+.hero h1 {
+    max-width: 370px;
+
+    margin-bottom: 11px;
+
     font-size: 32px;
-    line-height: 1.15;
-    margin-bottom: 15px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.3px;
+
+    font-weight: 750;
+}
+
+.hero h1 span {
+    color: var(--primary);
 }
 
 .hero p {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 360px;
 
-    color: #666;
-    font-size: 15px;
-    line-height: 1.6;
+    margin-bottom: 24px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.55;
 }
 
 
-/* =========================================
-   Search
-========================================= */
+/* =========================================================
+   SEARCH
+========================================================= */
 
 .search-box {
     width: 100%;
-    max-width: 550px;
-
-    margin: 30px auto 18px;
+    height: 52px;
 
     display: flex;
-    gap: 8px;
+    align-items: center;
+
+    padding: 4px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    transition:
+        border-color 0.15s ease,
+        background 0.15s ease;
+}
+
+.search-box:focus-within {
+    border-color: #4b456e;
+
+    background: #13151a;
 }
 
 .search-box input {
     flex: 1;
+
     min-width: 0;
 
-    padding: 14px;
+    height: 100%;
 
-    border: 1px solid #dcdcdc;
-    border-radius: 9px;
-
-    background: white;
-
-    font-size: 15px;
-}
-
-.search-box input:focus {
-    outline: none;
-    border-color: #222;
-}
-
-.search-box button {
-    padding: 14px 18px;
+    padding: 0 13px;
 
     border: none;
-    border-radius: 9px;
+    outline: none;
 
-    background: #222;
-    color: white;
+    background: transparent;
+
+    color: var(--text);
 
     font-size: 14px;
 }
 
-
-/* =========================================
-   Main Action Buttons
-========================================= */
-
-.action-buttons {
-    width: 100%;
-    max-width: 350px;
-
-    margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.search-box input::placeholder {
+    color: var(--text-muted);
 }
 
-.action-buttons button {
-    width: 100%;
-    padding: 14px;
+.search-box button {
+    height: 42px;
+
+    padding: 0 17px;
 
     border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.search-box button:hover {
+    background: var(--primary-hover);
+}
+
+.search-box button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   LOST / FOUND ACTIONS
+========================================================= */
+
+.actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 11px;
+}
+
+.actions button,
+#lostButton,
+#foundButton {
+
+    width: 100%;
+
+    min-height: 96px;
+
+    padding: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    text-align: left;
+
+    border-radius: 14px;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.actions button:active,
+#lostButton:active,
+#foundButton:active {
+    transform: scale(0.98);
+}
+
+
+/* LOST */
+
+#lostButton {
+    background: var(--lost-bg);
+
+    border: 1px solid var(--lost-border);
+
+    color: var(--lost);
+}
+
+#lostButton:hover {
+    background: #28191d;
+
+    border-color: #513037;
+}
+
+
+/* FOUND */
+
+#foundButton {
+    background: var(--found-bg);
+
+    border: 1px solid var(--found-border);
+
+    color: var(--found);
+}
+
+#foundButton:hover {
+    background: #192a21;
+
+    border-color: #385343;
+}
+
+
+/* =========================================================
+   ACTION ICONS
+========================================================= */
+
+.action-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 9px;
+
     border-radius: 9px;
 
-    background: #222;
-    color: white;
+    font-size: 14px;
 
-    font-size: 15px;
-    font-weight: 600;
+    font-weight: 800;
 }
 
-.action-buttons button:last-child {
-    background: white;
-    color: #222;
-    border: 1px solid #dcdcdc;
+#lostButton .action-icon {
+    background: #392124;
+
+    color: var(--lost);
+}
+
+#foundButton .action-icon {
+    background: #294033;
+
+    color: var(--found);
 }
 
 
-/* =========================================
-   Recent Items
-========================================= */
+/* =========================================================
+   ACTION TEXT
+========================================================= */
+
+.action-title {
+    display: block;
+
+    color: #f0f0f2;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+.action-subtitle {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   RECENT ITEMS
+========================================================= */
 
 .recent {
-    padding: 10px 18px 60px;
+    width: 100%;
+
+    padding: 14px 18px 30px;
 }
 
 .recent h2 {
-    font-size: 22px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
+
+    color: var(--text);
+
+    font-size: 19px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.4px;
 }
 
 .items {
+    width: 100%;
+
     display: grid;
+
     grid-template-columns: 1fr;
-    gap: 15px;
+
+    gap: 12px;
 }
 
 
-/* =========================================
-   Item Card
-========================================= */
+/* =========================================================
+   ITEM CARD
+========================================================= */
 
 .item-card {
-    background: white;
+    width: 100%;
 
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
+    overflow: hidden;
 
-    padding: 12px;
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition:
+        border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.item-card:hover {
+    border-color: var(--border-light);
+}
+
+.item-card:active {
+    transform: scale(0.99);
 }
 
 .item-image {
+    display: block;
+
     width: 100%;
-    height: 180px;
+    height: 190px;
 
-    background: #eeeeee;
-    border-radius: 9px;
+    object-fit: cover;
 
-    margin-bottom: 14px;
+    background: var(--surface-2);
 }
 
 .item-card h3 {
-    font-size: 17px;
-    margin-bottom: 5px;
+    margin: 13px 14px 4px;
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
 }
 
 .item-card p {
-    color: #777;
+    margin: 0 14px 15px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING STATE
+========================================================= */
+
+#loadingItems,
+#itemsContainer > p {
+    padding: 18px 0;
+
+    color: var(--text-muted);
+
     font-size: 13px;
 }
 
 
-/* =========================================
-   Post Item Page
-========================================= */
+/* =========================================================
+   POST PAGE
+========================================================= */
 
-.post-section {
+.post-container {
     width: 100%;
-    max-width: 520px;
+
+    max-width: 620px;
 
     margin: 0 auto;
 
-    padding: 30px 18px 50px;
+    padding: 30px 18px 125px;
 }
 
-.post-section h2 {
+.post-container h2 {
+    margin-bottom: 7px;
+
+    color: var(--text);
+
     font-size: 28px;
-    line-height: 1.2;
 
-    margin-bottom: 8px;
+    line-height: 1.1;
+
+    letter-spacing: -0.9px;
+
+    font-weight: 750;
 }
 
-.post-section > p {
-    color: #666;
+.post-subtitle {
+    margin-bottom: 24px;
 
-    font-size: 14px;
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
     line-height: 1.5;
-
-    margin-bottom: 28px;
 }
 
 
-/* =========================================
-   Post Form
-========================================= */
+/* =========================================================
+   FORM CARD
+========================================================= */
 
 #postForm {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
 
-    background: white;
+    padding: 20px 18px 21px;
 
-    border: 1px solid #e5e5e5;
-    border-radius: 14px;
+    background: var(--surface);
 
-    padding: 20px;
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
 }
 
 
-/* =========================================
-   Form Labels
-========================================= */
+/* =========================================================
+   FORM LABELS
+========================================================= */
 
 #postForm label {
     display: block;
 
-    margin-top: 19px;
     margin-bottom: 7px;
 
-    font-size: 14px;
-    font-weight: 600;
+    color: #d4d6db;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    font-weight: 650;
 }
 
-#postForm label:first-child {
-    margin-top: 0;
-}
 
+/* =========================================================
+   FORM INPUTS
+========================================================= */
 
-/* =========================================
-   Form Inputs
-========================================= */
-
-#postForm input,
+#postForm input[type="text"],
 #postForm select,
 #postForm textarea {
+
     width: 100%;
 
-    padding: 13px 12px;
+    margin-bottom: 19px;
 
-    border: 1px solid #dcdcdc;
-    border-radius: 9px;
+    padding: 0 13px;
 
-    background: #fafafa;
+    background: #0d0f13;
 
-    font-size: 15px;
-    color: #222;
-}
+    border: 1px solid var(--border);
 
-#postForm input:focus,
-#postForm select:focus,
-#postForm textarea:focus {
+    border-radius: 10px;
+
     outline: none;
 
-    border-color: #222;
+    color: var(--text);
 
-    background: white;
+    font-size: 14px;
+
+    transition:
+        border-color 0.15s ease,
+        background 0.15s ease;
 }
 
-
-/* =========================================
-   Image Upload
-========================================= */
-
-#itemImage {
-    padding: 10px !important;
-
-    background: #fafafa !important;
+#postForm input[type="text"],
+#postForm select {
+    height: 47px;
 }
-
-
-/* =========================================
-   Description
-========================================= */
 
 #postForm textarea {
-    min-height: 120px;
+    height: 108px;
+
+    padding: 13px;
 
     resize: vertical;
 }
 
+#postForm input[type="text"]::placeholder,
+#postForm textarea::placeholder {
+    color: #626872;
+}
 
-/* =========================================
-   Submit Button
-========================================= */
+#postForm input[type="text"]:focus,
+#postForm select:focus,
+#postForm textarea:focus {
 
-#postForm button {
-    width: 100%;
+    border-color: #514b7b;
 
-    margin-top: 25px;
-    padding: 14px;
-
-    border: none;
-    border-radius: 9px;
-
-    background: #222;
-    color: white;
-
-    font-size: 15px;
-    font-weight: 600;
+    background: #101218;
 }
 
 
-/* =========================================
-   Desktop
-========================================= */
-
-@media (min-width: 768px) {
-
-    header {
-        height: 70px;
-        padding: 0 8%;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    nav {
-        display: flex;
-        gap: 25px;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        padding: 90px 20px 70px;
-    }
-
-    .hero h2 {
-        font-size: 44px;
-    }
-
-
-    /* Action buttons */
-
-    .action-buttons {
-        flex-direction: row;
-        max-width: 450px;
-    }
-
-    .action-buttons button {
-        width: auto;
-        flex: 1;
-    }
-
-
-    /* Recent */
-
-    .recent {
-        padding: 20px 8% 80px;
-    }
-
-    .recent h2 {
-        font-size: 24px;
-    }
-
-    .items {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
-
-    /* Post */
-
-    .post-section {
-        padding-top: 50px;
-    }
-
-    .post-section h2 {
-        font-size: 34px;
-    }
-
-    #postForm {
-        padding: 28px;
-    }
-}
-/* =========================================
-   Image Upload Box
-========================================= */
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
 
 .image-upload {
     width: 100%;
+
+    margin-bottom: 19px;
 }
 
 #itemImage {
@@ -453,29 +681,39 @@ nav a {
 
 .upload-box {
     width: 100%;
-    height: 180px;
 
-    border: 1px dashed #cfcfcf;
-    border-radius: 10px;
-
-    background: #fafafa;
+    height: 150px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
+    overflow: hidden;
+
+    background: #0d0f13;
+
+    border: 1px dashed #393d46;
+
+    border-radius: 12px;
+
     cursor: pointer;
 
-    overflow: hidden;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
 }
 
 .upload-box:hover {
-    background: #f5f5f5;
+    background: #101218;
+
+    border-color: #6259a0;
 }
 
 .upload-text {
-    color: #666;
-    font-size: 14px;
+    color: var(--text-muted);
+
+    font-size: 13px;
 }
 
 #imagePreview {
@@ -485,4 +723,221 @@ nav a {
     height: 100%;
 
     object-fit: cover;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+#postForm button[type="submit"] {
+    width: 100%;
+
+    height: 49px;
+
+    margin-top: 2px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+#postForm button[type="submit"]:hover {
+    background: var(--primary-hover);
+}
+
+#postForm button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   MOBILE BOTTOM NAV
+========================================================= */
+
+.bottom-nav {
+    position: fixed;
+
+    left: 12px;
+    right: 12px;
+
+    bottom: 12px;
+
+    height: 62px;
+
+    display: flex;
+
+    background: rgba(20, 22, 27, 0.98);
+
+    border: 1px solid #2a2e36;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+
+    z-index: 200;
+}
+
+.nav-item {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #777d87;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: color 0.15s ease;
+}
+
+.nav-item.active {
+    color: var(--primary-hover);
+}
+
+.nav-item.active span {
+    padding: 7px 15px;
+
+    background: var(--primary-soft);
+
+    border-radius: 9px;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 768px) {
+
+    body {
+        padding-bottom: 0;
+    }
+
+
+    /* Header */
+
+    header {
+        height: 68px;
+
+        padding: 0 48px;
+    }
+
+    header nav {
+        display: flex;
+
+        align-items: center;
+
+        gap: 28px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        max-width: 1080px;
+
+        margin: 0 auto;
+
+        padding: 68px 30px 32px;
+    }
+
+    .hero h1 {
+        max-width: 650px;
+
+        font-size: 48px;
+    }
+
+    .hero p {
+        max-width: 600px;
+
+        font-size: 15px;
+    }
+
+
+    /* Search */
+
+    .search-box {
+        max-width: 620px;
+    }
+
+
+    /* Actions */
+
+    .actions {
+        max-width: 620px;
+    }
+
+
+    /* Recent */
+
+    .recent {
+        max-width: 1080px;
+
+        margin: 0 auto;
+
+        padding: 24px 30px 50px;
+    }
+
+    .items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .item-image {
+        height: 210px;
+    }
+
+
+    /* Post */
+
+    .post-container {
+        padding-top: 48px;
+    }
+
+
+    /* Bottom navigation */
+
+    .bottom-nav {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1100px) {
+
+    .hero {
+        padding-top: 82px;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .recent {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }

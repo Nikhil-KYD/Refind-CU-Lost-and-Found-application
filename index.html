@@ -2,66 +2,48 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>ReFind</title>
+    <title>ReFind — Chandigarh University</title>
 
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- Header -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header>
 
-        <h1>ReFind</h1>
+        <a href="index.html" class="logo">
+            ReFind
+        </a>
 
         <nav>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="#">
-                Lost Items
-            </a>
-
-            <a href="#">
-                Found Items
-            </a>
-
-            <a href="#">
-                Login
-            </a>
-
+            <a href="index.html">Home</a>
+            <a href="#">Lost Items</a>
+            <a href="#">Found Items</a>
+            <a href="#">Login</a>
         </nav>
 
     </header>
 
 
-
-    <!-- Main Content -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <main>
 
-
-        <!-- Hero Section -->
-
         <section class="hero">
 
-            <h2>
-                Lost something on campus?
-            </h2>
+            <h1>
+                Lost something<br>
+                on campus?
+            </h1>
 
             <p>
                 Find it again with ReFind.
@@ -70,32 +52,62 @@
             </p>
 
 
-            <!-- Search -->
+            <!-- =========================
+                 SEARCH
+            ========================== -->
 
             <div class="search-box">
 
                 <input
                     type="text"
                     placeholder="Search for an item..."
+                    aria-label="Search for an item"
                 >
 
-                <button>
+                <button type="button">
                     Search
                 </button>
 
             </div>
 
 
-            <!-- Main Actions -->
+            <!-- =========================
+                 LOST / FOUND
+            ========================== -->
 
-            <div class="action-buttons">
+            <div class="actions">
 
-                <button id="lostButton">
-                    I Lost Something
+                <button id="lostButton" type="button">
+
+                    <span class="action-icon">
+                        ↗
+                    </span>
+
+                    <span class="action-title">
+                        I lost something
+                    </span>
+
+                    <span class="action-subtitle">
+                        Help me find it
+                    </span>
+
                 </button>
 
-                <button id="foundButton">
-                    I Found Something
+
+                <button id="foundButton" type="button">
+
+                    <span class="action-icon">
+                        ✓
+                    </span>
+
+                    <span class="action-title">
+                        I found something
+                    </span>
+
+                    <span class="action-subtitle">
+                        Help return it
+                    </span>
+
                 </button>
 
             </div>
@@ -103,8 +115,9 @@
         </section>
 
 
-
-        <!-- Recent Items -->
+        <!-- =========================
+             RECENT ITEMS
+        ========================== -->
 
         <section class="recent">
 
@@ -112,62 +125,14 @@
                 Recent Items
             </h2>
 
+            <div
+                class="items"
+                id="itemsContainer"
+            >
 
-            <div class="items">
-
-
-                <!-- Item 1 -->
-
-                <div class="item-card">
-
-                    <div class="item-image"></div>
-
-                    <h3>
-                        Black Wallet
-                    </h3>
-
-                    <p>
-                        Found • Library
-                    </p>
-
-                </div>
-
-
-
-                <!-- Item 2 -->
-
-                <div class="item-card">
-
-                    <div class="item-image"></div>
-
-                    <h3>
-                        Blue Water Bottle
-                    </h3>
-
-                    <p>
-                        Lost • Block 4
-                    </p>
-
-                </div>
-
-
-
-                <!-- Item 3 -->
-
-                <div class="item-card">
-
-                    <div class="item-image"></div>
-
-                    <h3>
-                        Wireless Earphones
-                    </h3>
-
-                    <p>
-                        Found • Cafeteria
-                    </p>
-
-                </div>
-
+                <p id="loadingItems">
+                    Loading items...
+                </p>
 
             </div>
 
@@ -176,11 +141,11 @@
     </main>
 
 
-
-    <!-- Mobile Bottom Navigation -->
+    <!-- =========================
+         MOBILE NAVIGATION
+    ========================== -->
 
     <nav class="bottom-nav">
-
 
         <a
             href="index.html"
@@ -211,15 +176,19 @@
             </span>
         </a>
 
-
     </nav>
 
 
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
 
-    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+
 
     <script src="js/app.js"></script>
-
 
 </body>
 

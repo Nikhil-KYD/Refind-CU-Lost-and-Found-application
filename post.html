@@ -10,9 +10,12 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Post Item - ReFind</title>
+    <title>Post Item — ReFind</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
 </head>
 
@@ -20,11 +23,19 @@
 <body>
 
 
-    <!-- Header -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header>
 
-        <h1>ReFind</h1>
+        <a
+            href="index.html"
+            class="logo"
+        >
+            ReFind
+        </a>
+
 
         <nav>
 
@@ -40,35 +51,41 @@
                 Found Items
             </a>
 
+            <a href="#">
+                Login
+            </a>
+
         </nav>
 
     </header>
 
 
 
-    <!-- Main Content -->
+    <!-- =========================
+         POST PAGE
+    ========================== -->
 
     <main>
 
-        <section class="post-section">
+        <section class="post-container">
 
             <h2 id="postTitle">
                 Post an Item
             </h2>
 
-            <p>
-                Tell us about the item so its owner
-                can find it.
+            <p class="post-subtitle">
+                Tell us about the item so its owner can find it.
             </p>
 
 
-
-            <!-- Post Form -->
+            <!-- =========================
+                 FORM
+            ========================== -->
 
             <form id="postForm">
 
 
-                <!-- Item Name -->
+                <!-- ITEM NAME -->
 
                 <label for="itemName">
                     Item Name
@@ -83,40 +100,43 @@
 
 
 
-                <!-- Item Photo -->
+                <!-- ITEM PHOTO -->
 
-             <label for="itemImage">
-    Item Photo
-</label>
+                <label for="itemImage">
+                    Item Photo
+                </label>
 
-<div class="image-upload">
+                <div class="image-upload">
 
-    <label for="itemImage" class="upload-box">
+                    <label
+                        for="itemImage"
+                        class="upload-box"
+                    >
 
-        <span class="upload-text">
-            + Add Photo
-        </span>
+                        <span class="upload-text">
+                            + Add Photo
+                        </span>
 
-        <img
-            id="imagePreview"
-            src=""
-            alt="Image Preview"
-        >
+                        <img
+                            id="imagePreview"
+                            src=""
+                            alt="Selected item photo"
+                        >
 
-    </label>
-
-    <input
-        type="file"
-        id="itemImage"
-        accept="image/*"
-        required
-    >
-
-</div>
+                    </label>
 
 
+                    <input
+                        type="file"
+                        id="itemImage"
+                        accept="image/*"
+                    >
 
-                <!-- Category -->
+                </div>
+
+
+
+                <!-- CATEGORY -->
 
                 <label for="category">
                     Category
@@ -131,39 +151,39 @@
                         Select a category
                     </option>
 
-                    <option value="id-card">
-                        ID Card
-                    </option>
-
-                    <option value="wallet">
+                    <option value="Wallet">
                         Wallet
                     </option>
 
-                    <option value="phone">
+                    <option value="Phone">
                         Phone
                     </option>
 
-                    <option value="laptop">
-                        Laptop
+                    <option value="ID Card">
+                        ID Card
                     </option>
 
-                    <option value="earphones">
-                        Earphones
-                    </option>
-
-                    <option value="keys">
+                    <option value="Keys">
                         Keys
                     </option>
 
-                    <option value="books">
+                    <option value="Bag">
+                        Bag
+                    </option>
+
+                    <option value="Books">
                         Books
                     </option>
 
-                    <option value="clothing">
+                    <option value="Electronics">
+                        Electronics
+                    </option>
+
+                    <option value="Clothing">
                         Clothing
                     </option>
 
-                    <option value="other">
+                    <option value="Other">
                         Other
                     </option>
 
@@ -171,7 +191,7 @@
 
 
 
-                <!-- Location -->
+                <!-- LOCATION -->
 
                 <label for="location">
                     Where?
@@ -186,7 +206,7 @@
 
 
 
-                <!-- Description -->
+                <!-- DESCRIPTION -->
 
                 <label for="description">
                     Description
@@ -195,18 +215,18 @@
                 <textarea
                     id="description"
                     placeholder="Describe the item..."
-                    rows="5"
                     required
                 ></textarea>
 
 
 
-                <!-- Submit -->
+                <!-- SUBMIT -->
 
-                <button type="submit">
+                <button
+                    type="submit"
+                >
                     Post Item
                 </button>
-
 
             </form>
 
@@ -216,7 +236,9 @@
 
 
 
-    <!-- Mobile Bottom Navigation -->
+    <!-- =========================
+         MOBILE NAVIGATION
+    ========================== -->
 
     <nav class="bottom-nav">
 
@@ -253,8 +275,13 @@
 
 
 
-    <!-- JavaScript -->
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
     <script src="js/post.js"></script>
 
 </body>
